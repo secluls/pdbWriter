@@ -1,0 +1,24 @@
+name: Build and Publish Executable
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up MSBuild
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Build solution
+      run: |
+        msbuild pdbWriter.sln /p:Configuration=Release /p:Platform=x64 /t:Build
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: pdbWriter-exe
+        path: .
