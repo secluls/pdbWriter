@@ -23,7 +23,7 @@
     <ProjectGuid>{AF3C98CB-9C6E-403A-9AFE-5D53CE6BBDFD}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>pdbWriter</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>$(LatestTargetPlatformVersion)</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
